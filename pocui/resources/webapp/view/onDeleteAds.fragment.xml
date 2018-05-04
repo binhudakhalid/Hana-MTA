@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Confirm">
+		<beginButton>
+			<Button text="Cancel" press="onCancelDelete"/>
+		</beginButton>
+		<endButton>
+			<Button text="Done" type="Emphasized" press="onDeleteAd" enabled="{/doneButtonActive}"/>
+		</endButton>
+		
+			<content>
+			<VBox width="100%" direction="Column" displayInline="true">
+				<Text text="    Are you sure you want to delete?    " />
+			</VBox>
+		</content>
+	
+		 
+	</Dialog>
+</core:FragmentDefinition>

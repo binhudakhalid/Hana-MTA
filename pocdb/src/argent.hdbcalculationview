@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="POC.pocdb::argent" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="HOURLY" enforceSqlExecution="false">
+<descriptions defaultDescription="argent_Advertisment"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="POC.pocdb::pocds.advertisement">
+    <resourceUri>POC.pocdb::pocds.advertisement</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="name">
+        <descriptions defaultDescription="name"/>
+      </viewAttribute>
+      <viewAttribute id="adOf_name">
+        <descriptions defaultDescription="adOf_name"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="POC.pocdb::pocds.advertisement">
+      <mapping xsi:type="Calculation:AttributeMapping" target="name" source="name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="adOf_name" source="adOf.name"/>
+    </input>
+    <filter>&quot;adOf_name&quot;='admin'</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="name" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="name"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="209"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

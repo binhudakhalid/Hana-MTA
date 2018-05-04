@@ -1,0 +1,15 @@
+namespace POC.pocdb;
+
+context pocds {
+    entity user {
+        key name : String(100);
+    }
+
+    /*@@layout{"layoutInfo":{"x":-528,"y":34.5}}*/
+    entity advertisement {
+        key name        : String(100);
+            adOf        : association[0..1] to pocds.user;
+            description : String(100);
+            number      : Integer64 not null;
+    };
+};

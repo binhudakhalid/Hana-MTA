@@ -1,0 +1,7 @@
+service {
+  "POC.pocdb::argent" as "admin" keys generate local "ID";
+  
+  "POC.pocdb::pocds.advertisement" as "ads";
+ 
+  
+}

@@ -1,0 +1,38 @@
+_schema-version: 2.0.0
+ID: POC
+version: 1.0.4
+modules:
+  - name: pocdb
+    type: hdb
+    path: pocdb
+    requires:
+      - name: hdi_pocdb
+  - name: pocjs
+    type: nodejs
+    path: pocjs
+    provides:
+      - name: pocjs_api
+        properties:
+          service_url: '${default-url}'
+    requires:
+      - name: hdi_pocdb
+    parameters:
+      memory: 256M
+  
+    
+
+  - name: pocui
+    type: html5
+    path: pocui
+    requires:
+     - name: pocjs_api
+       group: destinations
+       properties:
+          name: pocjs_be
+          url: '~{service_url}'
+
+resources:
+  - name: hdi_pocdb
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
