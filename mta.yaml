@@ -41,3 +41,5 @@ resources:
     type: com.sap.xs.hdi-container
   - name: poc_uaa
     type: com.sap.xs.uaa
+    parameters:
+      path: ./xs-security.json

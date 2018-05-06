@@ -3,6 +3,13 @@
 	"authenticationMethod": "route",
 	"routes": [{
 		"source": "/adminads.xsodata/",
-		"destination": "pocjs_be"
+		"destination": "pocjs_be",
+		"scope": "$XSAPPNAME.view"
+	},
+	{
+			"source": "^/(.*)$",
+			"localDir": "resources",
+			"scope": "$XSAPPNAME.view"
+		
 	}]
 }
