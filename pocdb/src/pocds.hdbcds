@@ -1,15 +1,39 @@
 namespace POC.pocdb;
 
 context pocds {
-    entity user {
-        key name : String(100);
-    }
+
 
     /*@@layout{"layoutInfo":{"x":-528,"y":34.5}}*/
     entity advertisement {
         key name        : String(100);
-            adOf        : association[0..1] to pocds.user;
-            description : String(100);
-            number      : Integer64 not null;
+            adOf        : association[0..1] to user { name };
+            description : String(1000);
+            date        : LocalDate not null;
+            category    : String(20);
+            price		: String(20);
+            number      :  String(30)   not null;
+    }
+
+    /*@@layout{"layoutInfo":{"x":-458,"y":-188}}*/
+    entity user {
+        key name : String(100);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-67,"y":-152}}*/
+    entity user1 {
+        key userId   : Integer     not null;
+            userName : String(100) not null;
+            userAd   : association[1, 0..*] to advertisement1 { adId };
+    }
+
+    entity advertisement1 {
+        key bookId     : Integer     not null;
+        key adId       : Integer     not null;
+            adTitle    : String(100) not null;
+            category   : String(30)  not null;
+            phone      : String(40)  not null;
+            price      : Integer     not null;
+            date       : LocalDate   not null;
+            authorName : String(100);
     };
 };

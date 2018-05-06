@@ -68,11 +68,14 @@ sap.ui.define([
 				adOf: "",
 				description: "",
 				number: "",
-				price: 0,
+				price: "",
 				advertisementName: "Enter Title of Your Advertisement",
 				userName: "Enter User Name",
 				advertisementDetail: "Enter Detail about your ad",
 				phoneNumber: "Enter your Contact Number",
+				enterdate: "Enter date",
+				enterCategory:"Enter Category",
+				enterPrice: "Enter Price",
 				doneButtonActive: true
 			});
 
@@ -90,6 +93,8 @@ sap.ui.define([
 				"name": oModel.oData.name,
 				"adOf.name": oModel.oData.adOf,
 				"description": oModel.oData.description,
+				"date":  oModel.oData.date,
+				"category": oModel.oData.category,
 				"number": oModel.oData.number
 			};
 

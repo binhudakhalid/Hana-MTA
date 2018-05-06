@@ -16,23 +16,28 @@ modules:
           service_url: '${default-url}'
     requires:
       - name: hdi_pocdb
+      - name: pocdb
+      - name: poc_uaa
     parameters:
       memory: 256M
-  
-    
-
   - name: pocui
     type: html5
     path: pocui
     requires:
-     - name: pocjs_api
-       group: destinations
-       properties:
+      - name: pocjs_api
+        group: destinations
+        properties:
           name: pocjs_be
           url: '~{service_url}'
-
+          forwardAuthToken: true
+      - name: pocdb
+      - name: poc_uaa
+    parameters:
+      memory: 256M
 resources:
   - name: hdi_pocdb
     properties:
       hdi-container-name: '${service-name}'
     type: com.sap.xs.hdi-container
+  - name: poc_uaa
+    type: com.sap.xs.uaa

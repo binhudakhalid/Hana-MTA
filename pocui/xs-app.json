@@ -1,5 +1,8 @@
 {
-  "welcomeFile": "index.html",
-  "authenticationMethod": "none",
-  "routes": [{ "source": "/adminads.xsodata/", "destination": "pocjs_be" }]
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "/adminads.xsodata/",
+		"destination": "pocjs_be"
+	}]
 }
