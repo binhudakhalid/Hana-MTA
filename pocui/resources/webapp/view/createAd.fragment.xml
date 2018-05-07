@@ -12,7 +12,7 @@
 					<Input width="100%" value="{/name}" placeholder="{/advertisementName}"/>
 					<Input width="100%" value="{/adOf}" placeholder="{/userName}"/>
 					<Input width="100%" value="{/description}" placeholder="{/advertisementDetail}"/>
-						<Input width="100%" value="{/date}" placeholder="{/enterdate}"/>
+					 
 						<Input width="100%" value="{/category}" placeholder="{/enterCategory}"/>
 						<Input width="100%" value="{/price}" placeholder="{/enterPrice}"/>
 					<Input width="100%" value="{/number}" placeholder="{/phoneNumber}"/>

@@ -88,15 +88,18 @@ sap.ui.define([
 		onCreateAd: function(oEvent) {
 			// get the JSON model 
 			var oModel = oEvent.getSource().getModel();
-
+var today = new Date();
+console.log(today);
 			var payload = {
 				"name": oModel.oData.name,
 				"adOf.name": oModel.oData.adOf,
 				"description": oModel.oData.description,
-				"date":  oModel.oData.date,
+				"date":  today,
+				"price":  oModel.oData.price,
 				"category": oModel.oData.category,
 				"number": oModel.oData.number
 			};
+ 
 
 			var self = this;
 			this.getView().getModel().create("/ads", payload, {

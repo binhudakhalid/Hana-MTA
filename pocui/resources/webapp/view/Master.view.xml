@@ -63,11 +63,11 @@
 							type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
 							press="onSelectionChange"
 							title="{name}"
-							number="{
-								path: 'number',
+							number="{i18n>currencySymbol}{
+								path: 'price',
 								formatter: '.formatter.currencyValue'
 							}"
-							numberUnit="{description}">
+							numberUnit="{category}">
 					</ObjectListItem>
 				</items>
 			</List>

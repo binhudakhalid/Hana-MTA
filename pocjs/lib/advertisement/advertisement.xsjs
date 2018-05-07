@@ -2,23 +2,30 @@ function saveAdvertisement(advertisement) {
 	console.log(advertisement.name);
   var conn = $.hdb.getConnection();
   var output = JSON.stringify(advertisement);
-  var fnCreateadvertisement = conn.loadProcedure("POC.pocdb::createAdvertisement");
-  var result = fnCreateadvertisement({IM_ADVERTISEMENT: advertisement.name, IM_NAME: advertisement.adOf});
+  var fnCreateadvertisement = conn.loadProcedure("POC.pocdb::deleteAd");
+  var result = fnCreateadvertisement({IM_ADVERTISEMENT: advertisement.name});
   conn.commit();
   conn.close();
 
   if (result && result.EX_ERROR != null) { 
-    return result.EX_ERROR;
+     return {body : result,
+     status: $.net.http.BAD_REQUEST};
   }
-  else { return output; }
+  else { 
+  	   return {body : output,
+  	   	status: $.net.http.CREATED};
+  	   	
+  	   }
 }
 
-var advertisement = {
-  name: $.request.parameters.get("name"),
-  adOf: $.request.parameters.get("adOf")
-};
+var body = $.request.body.asString();
+var advertisement = JSON.parse(body);
+
 
 // validate the inputs here!
 var output = saveAdvertisement(advertisement);
 $.response.contentType = "application/json";
-$.response.setBody(output);
+$.response.setBody(output.body);
+$.response.status = output.status;
+
+

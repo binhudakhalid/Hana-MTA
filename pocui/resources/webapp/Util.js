@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
 	$.ajax({
 		type: 'GET',
 		url: '/',
@@ -14,3 +14,4 @@ $(function() {
 		}
 	});
 });
+*/
