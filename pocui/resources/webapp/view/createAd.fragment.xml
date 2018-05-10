@@ -13,6 +13,19 @@
 					<Input width="100%" value="{/adOf}" placeholder="{/userName}"/>
 					<Input width="100%" value="{/description}" placeholder="{/advertisementDetail}"/>
 					 
+					 <!-- for User Input Validation
+					 <Input value=”{
+
+        path : ‘/name’,
+
+        type : ‘sap.ui.model.type.String’,
+
+        constraints : {
+
+            minLength : 2
+
+        } -->
+					 
 						<Input width="100%" value="{/category}" placeholder="{/enterCategory}"/>
 						<Input width="100%" value="{/price}" placeholder="{/enterPrice}"/>
 					<Input width="100%" value="{/number}" placeholder="{/phoneNumber}"/>

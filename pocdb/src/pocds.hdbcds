@@ -20,7 +20,7 @@ context pocds {
     };
 
     /*@@layout{"layoutInfo":{"x":-67,"y":-152}}*/
-    entity user1 {
+     /*entity user1 {
         key userId   : Integer     not null;
             userName : String(100) not null;
             userAd   : association[1, 0..*] to advertisement1 { adId };
@@ -35,5 +35,5 @@ context pocds {
             price      : Integer     not null;
             date       : LocalDate   not null;
             authorName : String(100);
-    };
+    };*/
 };
